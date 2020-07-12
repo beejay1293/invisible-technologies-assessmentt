@@ -1,0 +1,28 @@
+{
+  "name": "invisible-technologies-assessmentt",
+  "version": "1.0.0",
+  "description": "Given an array of inputs (location name, postal code), log the current time and weather for those locations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "./node_modules/.bin/eslint server --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beejay1293/invisible-technologies-assessmentt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beejay1293/invisible-technologies-assessmentt/issues"
+  },
+  "homepage": "https://github.com/beejay1293/invisible-technologies-assessmentt#readme",
+  "dependencies": {
+    "ava": "^3.10.1",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "ora": "^4.0.4",
+    "table": "^5.4.6"
+  }
+}
