@@ -2,7 +2,7 @@
 Given an array of inputs (location name, postal code), log the current time and weather for those locations.
 
 ## Features
-- Users can **Get Weather Report**
+- Users can **Get Weather Report of a locations**
 
 ## Technologies
 
@@ -25,7 +25,7 @@ cd invisible-technologies-assessmentt
 npm install
 node ~/invisible-technologies-assessmentt/src ./index.js "<Location(s)>"
 
-Example ~/invisible-technologies-assessmentt/src ./index.js "New York, 10005, To
+Example node ~/invisible-technologies-assessmentt/src ./index.js "New York, 10005, To
 kyo, lagos"
 ```
 
