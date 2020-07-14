@@ -1,5 +1,5 @@
 const { table } = require('table')
-const ora = require('ora');
+const ora = require('ora')
 
 const { getLocationWeatherReport, generateTableFromData } = require('./utils')
 const spinner = ora('Loading weather report')
@@ -9,19 +9,25 @@ const input = args[0].split(", ")
 
 const getWeatherReport = async (locations) => {
  try {
+  if(locations.length <= 1 && locations[0].trim() === ''){
+    console.log('Hey, you forgot to enter a location name')
+    return
+  }
+
   spinner.start()
-  spinner.color = 'yellow';
+  spinner.color = 'yellow'
 
   let weatherData = []
 
   for (let i = 0; i < locations.length;) {
-    //if string and next item is number
+
     if (locations[i] && parseInt(locations[i + 1])) {
       const locationName = locations[i]
       const postalCode = locations[i + 1]
 
-      const res = await getLocationWeatherReport(locationName).then(res => res.json())
-      const { location, current } = res
+      const report = await getLocationWeatherReport(locationName)
+
+      const { location, current } = report
       
       const locationWeather = current ? current.weather_descriptions[0] : 'not found'
       const locationTemp = current ? `${current.temperature} degrees` : 'not found'
@@ -32,8 +38,9 @@ const getWeatherReport = async (locations) => {
     } else {
       const locationName = locations[i]
 
-      const res = await getLocationWeatherReport(locationName).then(res => res.json())
-      const { location, current } = res
+      const report = await getLocationWeatherReport(locationName)
+
+      const { location, current } = report
       
       const locationWeather = current ? current.weather_descriptions[0] : 'not found'
       const locationTemp = current ? `${current.temperature} degrees` : 'not found'

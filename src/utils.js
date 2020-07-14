@@ -8,7 +8,7 @@ const getLocationWeatherReport = async (location) => {
     {
      method: 'GET',
      headers: { 'Content-Type': 'application/json' }   
-    })
+    }).then(res => res.json())
 }
 
 const generateTableFromData = (data) => {
