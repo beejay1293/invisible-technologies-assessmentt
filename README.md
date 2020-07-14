@@ -2,7 +2,7 @@
 Given an array of inputs (location name, postal code), log the current time and weather for those locations.
 
 ## Features
-- Users can **Get Weather Report of a locations**
+- Users can **Get Weather Report of a location**
 
 ## Technologies
 
